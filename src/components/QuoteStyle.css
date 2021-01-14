@@ -3,23 +3,32 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: "Lobster Two", cursive;
+  transition: background-color 0.5s ease;
 }
 .prediction-container {
   display: flex;
   flex-direction: column;
   width: 60%;
-}
-
-.header {
-  font-family: "Lobster Two", cursive;
+  background-color: aliceblue;
+  padding: 15px;
 }
 .prediction-body {
   font-family: "Mukta", sans-serif;
+  color: #462c38;
 }
 .author {
   font-family: "Gruppo", cursive;
   align-self: flex-end;
 }
-
 .btn {
+  background-color: #a28d8d;
+  width: auto;
+  padding: 10px;
+  border: 2px solid white;
+  font-size: 20px;
+}
+.btn:hover {
+  box-shadow: 0px 0px 0px 5px #a0a0a0, inset 0px 10px 27px -8px #141414,
+    inset 0px -10px 27px -8px aliceblue, -5px 27px 28px -5px #000000;
 }
