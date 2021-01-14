@@ -1,11 +1,16 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Quote from "./Quote";
+import "./QuoteStyle.css";
 
 const QuoteList = () => {
   const [quotes, setQuotes] = useState([]);
   const [randomQuote, setRandomQuote] = useState([]);
+  const [backgroundCol, setBackgroundCol] = useState();
 
+  let colors = [
+  "#F3DCD4", "#D9E3DA", "#D1CFC0", "#ECC9C7",
+  ]
   useEffect(() => {
     async function fetchData() {
       try {
@@ -18,15 +23,21 @@ const QuoteList = () => {
     }
     fetchData();
   }, []);
+
   function generatePrediction() {
     const randomPrediction = quotes[Math.floor(Math.random() * quotes.length)];
-    console.log("prediction");
     setRandomQuote(randomPrediction);
   }
+  function generateColor() {
+    let randomColor = Math.floor(Math.random() * colors.length);
+    setBackgroundCol(randomColor);
+  }
   return (
-    <div>
+    <div className="container" generateColor={generateColor} style={{backgroundColor: backgroundCol}}>
+    <div className="prediction-container">
       <Quote randomQuote={randomQuote} />
       <button onClick={generatePrediction}>Generate Prediction</button>
+    </div>
     </div>
   );
 };

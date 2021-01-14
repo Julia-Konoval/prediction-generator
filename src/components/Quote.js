@@ -1,14 +1,14 @@
 import React from "react";
+import "./QuoteStyle.css";
 
 const Quote = ({ randomQuote }) => {
   const { text, author } = randomQuote;
-  console.log("random" + randomQuote);
 
   return (
-    <div>
-      <h1>Hello</h1>
-      <h1>{text}</h1>
-      <h2>{author}</h2>
+    <div className="prediction-container">
+      <h1 className="header">Your prediction for today:</h1>
+      <h1 className="prediction-body">'{text}'</h1>
+      <h2 className="author">{author}</h2>
     </div>
   );
 };

@@ -1,0 +1,25 @@
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.prediction-container {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+}
+
+.header {
+  font-family: "Lobster Two", cursive;
+}
+.prediction-body {
+  font-family: "Mukta", sans-serif;
+}
+.author {
+  font-family: "Gruppo", cursive;
+  align-self: flex-end;
+}
+
+.btn {
+}
