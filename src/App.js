@@ -1,5 +1,5 @@
 import React from "react";
-import QuoteList from "./components/Quote";
+import QuoteList from "./components/QuoteList";
 
 function App() {
   return (

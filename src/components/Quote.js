@@ -1,8 +1,8 @@
 import React from "react";
 
-const Quote = ({ quote }) => {
-  const { text, author } = quote;
-  console.log(quote);
+const Quote = ({ randomQuote }) => {
+  const { text, author } = randomQuote;
+  console.log("random" + randomQuote);
 
   return (
     <div>

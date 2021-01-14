@@ -4,6 +4,7 @@ import Quote from "./Quote";
 
 const QuoteList = () => {
   const [quotes, setQuotes] = useState([]);
+  const [randomQuote, setRandomQuote] = useState([]);
 
   useEffect(() => {
     async function fetchData() {
@@ -17,12 +18,15 @@ const QuoteList = () => {
     }
     fetchData();
   }, []);
-  console.log(quotes);
+  function generatePrediction() {
+    const randomPrediction = quotes[Math.floor(Math.random() * quotes.length)];
+    console.log("prediction");
+    setRandomQuote(randomPrediction);
+  }
   return (
     <div>
-      {quotes.map((quote) => (
-        <Quote quote={quote} />
-      ))}
+      <Quote randomQuote={randomQuote} />
+      <button onClick={generatePrediction}>Generate Prediction</button>
     </div>
   );
 };
